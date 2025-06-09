@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Teeth Dental Clinic</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #0d6efd;
+            --secondary-color: #1ba098;
+            --light-color: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            min-height: 80vh;
+            color: white;
+        }
+        
+        .navbar {
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled {
+            background-color: white !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar.scrolled .nav-link {
+            color: var(--primary-color) !important;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            transition: transform 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .dentist-card img {
+            transition: transform 0.3s ease;
+        }
+        
+        .dentist-card:hover img {
+            transform: scale(1.05);
+        }
+        
+        .testimonial-card {
+            background-color: var(--light-color);
+            border-radius: 10px;
+        }
+        
+        .faq-item {
+            margin-bottom: 1rem;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .faq-header {
+            background-color: var(--light-color);
+            padding: 1rem;
+            cursor: pointer;
+        }
+        
+        .appointment-form {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-appointment {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+        
+        footer {
+            background-color: #2c3e50;
+            color: white;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-3">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <i class="fas fa-tooth me-2 fa-lg"></i>
+                <span class="fw-bold">Happy Teeth Dental</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#dentists">Dentists</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+                <button class="btn btn-light ms-lg-3 appointment-btn">Book Appointment</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section d-flex align-items-center" id="home">
+        <div class="container text-center">
+            <h1 class="display-3 fw-bold mb-4">Your Perfect Smile Starts Here</h1>
+            <p class="lead mb-5">Professional dental care in a comfortable environment with the latest technology.</p>
+            <div class="d-flex justify-content-center gap-3">
+                <button class="btn btn-primary btn-lg px-4 py-2 appointment-btn">Book Appointment</button>
+                <button class="btn btn-outline-light btn-lg px-4 py-2">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-5" id="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <img src="https://images.unsplash.com/photo-1530026186672-2cd00ffc50fe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Dental Clinic" class="img-fluid rounded shadow">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="fw-bold mb-4">About Our Clinic</h2>
+                    <p class="lead">We are committed to providing exceptional dental care to our patients.</p>
+                    <p>Happy Teeth Dental Clinic has been serving the community for over 15 years with state-of-the-art technology and a patient-centered approach. Our team of experienced dentists and friendly staff ensure you receive the best possible care in a comfortable environment.</p>
+                    
+                    <div class="row mt-4">
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-center">
+                                <div class="me-3 text-primary">
+                                    <i class="fas fa-check-circle fa-2x"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-0">Certified Dentists</h5>
+                                    <p class="mb-0">All our specialists are highly qualified.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-center">
+                                <div class="me-3 text-primary">
+                                    <i class="fas fa-tooth fa-2x"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-0">Modern Equipment</h5>
+                                    <p class="mb-0">Using the latest dental technology.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-center">
+                                <div class="me-3 text-primary">
+                                    <i class="fas fa-heart fa-2x"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-0">Painless Treatment</h5>
+                                    <p class="mb-0">Comfortable procedures with minimal pain.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-center">
+                                <div class="me-3 text-primary">
+                                    <i class="fas fa-clock fa-2x"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-0">Emergency Care</h5>
+                                    <p class="mb-0">24/7 emergency dental services.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-5 bg-light" id="services">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Our Dental Services</h2>
+                <p class="lead">Providing comprehensive dental care for the whole family</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 service-card border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="icon-box bg-primary bg-opacity-10 text-primary p-3 rounded-circle d-inline-block mb-4">
+                                <i class="fas fa-tooth fs-3"></i>
+                            </div>
+                            <h5 class="card-title">General Dentistry</h5>
+                            <p class="card-text">Routine check-ups, cleanings, fillings, and preventive care to maintain your oral health.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 service-card border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="icon-box bg-primary bg-opacity-10 text-primary p-3 rounded-circle d-inline-block mb-4">
+                                <i class="fas fa-tooth fs-3"></i>
+                            </div>
+                            <h5 class="card-title">Cosmetic Dentistry</h5>
+                            <p class="card-text">Teeth whitening, veneers, bonding, and other treatments to enhance your smile.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 service-card border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="icon-box bg-primary bg-opacity-10 text-primary p-3 rounded-circle d-inline-block mb-4">
+                                <i class="fas fa-tooth fs-3"></i>
+                            </div>
+                            <h5 class="card-title">Orthodontics</h5>
+                            <p class="card-text">Braces, aligners, and other treatments to straighten teeth and correct bites.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 service-card border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="icon-box bg-primary bg-opacity-10 text-primary p-3 rounded-circle d-inline-block mb-4">
+                                <i class="fas fa-tooth fs-3"></i>
+                            </div>
+                            <h5 class="card-title">Oral Surgery</h5>
+                            <p class="card-text">Tooth extractions, implants, and other surgical procedures for dental health.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Additional services -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 service-card border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="icon-box bg-primary bg-opacity-10 text-primary p-3 rounded-circle d-inline-block mb-4">
+                                <i class="fas fa-tooth fs-3"></i>
+                            </div>
+                            <h5 class="card-title">Periodontics</h5>
+                            <p class="card-text">Treatment of gum disease and other conditions affecting the gums.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 service-card border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="icon-box bg-primary bg-opacity-10 text-primary p-3 rounded-circle d-inline-block mb-4">
+                                <i class="fas fa-tooth fs-3"></i>
+                            </div>
+                            <h5 class="card-title">Pediatric Dentistry</h5>
+                            <p class="card-text">Specialized dental care for children and teens in a friendly environment.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 service-card border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="icon-box bg-primary bg-opacity-10 text-primary p-3 rounded-circle d-inline-block mb-4">
+                                <i class="fas fa-tooth fs-3"></i>
+                            </div>
+                            <h5 class="card-title">Dental Implants</h5>
+                            <p class="card-text">Permanent tooth replacement solutions that look and feel natural.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 service-card border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="icon-box bg-primary bg-opacity-10 text-primary p-3 rounded-circle d-inline-block mb-4">
+                                <i class="fas fa-tooth fs-3"></i>
+                            </div>
+                            <h5 class="card-title">Emergency Care</h5>
+                            <p class="card-text">Immediate treatment for dental emergencies, available 24/7.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dentists Section -->
+    <section class="py-5" id="dentists">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Meet Our Dentists</h2>
+                <p class="lead">Our team of professional and caring dentists</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card border-0 shadow-sm h-100 dentist-card">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             class="card-img-top" alt="Dr. Sarah Johnson">
+                        <div class="card-body text-center">
+                            <h5 class="card-title mb-1">Dr. Sarah Johnson</h5>
+                            <p class="text-muted mb-3">General Dentist</p>
+                            <p class="card-text">With over 10 years of experience, Dr. Johnson specializes in preventive and restorative dentistry.</p>
+                            <div class="d-flex justify-content-center gap-2">
+                                <a href="#" class="text-primary"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" class="text-primary"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="card border-0 shadow-sm h-100 dentist-card">
+                        <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" 
+                             class="card-img-top" alt="Dr. Michael Chen">
+                        <div class="card-body text-center">
+                            <h5 class="card-title mb-1">Dr. Michael Chen</h5>
+                            <p class="text-muted mb-3">Orthodontist</p>
+                            <p class="card-text">Specializing in braces and aligners, Dr. Chen has transformed thousands of smiles.</p>
+                            <div class="d-flex justify-content-center gap-2">
+                                <a href="#" class="text-primary"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" class="text-primary"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="card border-0 shadow-sm h-100 dentist-card">
+                        <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80" 
+                             class="card-img-top" alt="Dr. Emily Rodriguez">
+                        <div class="card-body text-center">
+                            <h5 class="card-title mb-1">Dr. Emily Rodriguez</h5>
+                            <p class="text-muted mb-3">Pediatric Dentist</p>
+                            <p class="card-text">Known for making dental visits fun, Dr. Rodriguez specializes in children's dentistry.</p>
+                            <div class="d-flex justify-content-center gap-2">
+                                <a href="#" class="text-primary"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" class="text-primary"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="card border-0 shadow-sm h-100 dentist-card">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" 
+                             class="card-img-top" alt="Dr. David Kim">
+                        <div class="card-body text-center">
+                            <h5 class="card-title mb-1">Dr. David Kim</h5>
+                            <p class="text-muted mb-3">Oral Surgeon</p>
+                            <p class="card-text">With expertise in implants and extractions, Dr. Kim provides pain-free surgical solutions.</p>
+                            <div class="d-flex justify-content-center gap-2">
+                                <a href="#" class="text-primary"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" class="text-primary"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <button class="btn btn-primary">View All Team Members</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-5 bg-light" id="testimonials">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Patient Testimonials</h2>
+                <p class="lead">What our patients say about us</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="testimonial-card p-4 h-100">
+                        <div class="d-flex mb-3">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Patient" class="rounded-circle me-3" width="60">
+                            <div>
+                                <h5 class="mb-1">Jessica Miller</h5>
+                                <div class="text-warning">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="mb-0">"I had my biggest fear of dentists, but the team at Bright Smile made me feel so comfortable. The cleaning was painless and they explained everything clearly. Highly recommended!"</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="testimonial-card p-4 h-100">
+                        <div class="d-flex mb-3">
+                            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Patient" class="rounded-circle me-3" width="60">
+                            <div>
+                                <h5 class="mb-1">Robert Thompson</h5>
+                                <div class="text-warning">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="mb-0">"The dental implant procedure was flawless. Dr. Kim is a true professional. The staff is friendly and the office is spotless. My new tooth looks completely natural. Thank you!"</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="testimonial-card p-4 h-100">
+                        <div class="d-flex mb-3">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Patient" class="rounded-circle me-3" width="60">
+                            <div>
+                                <h5 class="mb-1">Amanda Wilson</h5>
+                                <div class="text-warning">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="mb-0">"My kids actually look forward to their dental visits thanks to Dr. Rodriguez. The office is so kid-friendly and the service is excellent. Finally found a dentist we can trust."</p>
+                    </div>
+                </div>
+                
+                <!-- Testimonial slider controls -->
+                <div class="col-12 text-center mt-4">
+                    <button class="btn btn-outline-primary rounded-circle mx-1 testimonial-prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="btn btn-outline-primary rounded-circle mx-1 testimonial-next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-5" id="faq">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <h2 class="fw-bold mb-4">Frequently Asked Questions</h2>
+                    <p class="lead">Have questions? We have answers.</p>
+                    <p>Below you'll find answers to common questions about dental procedures, insurance, and our clinic policies.</p>
+                    
+                    <div class="mt-4">
+                        <div class="faq-item mb-3">
+                            <div class="faq-header d-flex justify-content-between align-items-center p-3 border rounded" data-bs-toggle="collapse" href="#faq1">
+                                <h5 class="mb-0">How often should I visit the dentist?</h5>
+                                <i class="fas fa-plus"></i>
+                            </div>
+                            <div class="collapse show p-3 border-top-0 border rounded-bottom" id="faq1">
+                                <p>We recommend visiting the dentist every six months for a routine checkup and cleaning. However, some patients may need more frequent visits based on their specific oral health needs.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item mb-3">
+                            <div class="faq-header d-flex justify-content-between align-items-center p-3 border rounded collapsed" data-bs-toggle="collapse" href="#faq2">
+                                <h5 class="mb-0">Do you accept dental insurance?</h5>
+                                <i class="fas fa-plus"></i>
+                            </div>
+                            <div class="collapse p-3 border-top-0 border rounded-bottom" id="faq2">
+                                <p>Yes, we accept most major dental insurance plans. Our office staff will be happy to verify your benefits and help you understand your coverage. We also offer flexible payment options for patients without insurance.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item mb-3">
+                            <div class="faq-header d-flex justify-content-between align-items-center p-3 border rounded collapsed" data-bs-toggle="collapse" href="#faq3">
+                                <h5 class="mb-0">What should I do in case of a dental emergency?</h5>
+                                <i class="fas fa-plus"></i>
+                            </div>
+                            <div class="collapse p-3 border-top-0 border rounded-bottom" id="faq3">
+                                <p>For dental emergencies, please call our office immediately at (555) 123-4567. We reserve time in our schedule for emergency patients and will do our best to see you as soon as possible, often the same day.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item mb-3">
+                            <div class="faq-header d-flex justify-content-between align-items-center p-3 border rounded collapsed" data-bs-toggle="collapse" href="#faq4">
+                                <h5 class="mb-0">Is teeth whitening safe?</h5>
+                                <i class="fas fa-plus"></i>
+                            </div>
+                            <div class="collapse p-3 border-top-0 border rounded-bottom" id="faq4">
+                                <p>When performed by a dental professional, teeth whitening is a safe and effective way to brighten your smile. We use professional-grade whitening products that are much safer and more effective than over-the-counter options.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-header d-flex justify-content-between align-items-center p-3 border rounded collapsed" data-bs-toggle="collapse" href="#faq5">
+                                <h5 class="mb-0">How can I overcome my fear of dentistry?</h5>
+                                <i class="fas fa-plus"></i>
+                            </div>
+                            <div class="collapse p-3 border-top-0 border rounded-bottom" id="faq5">
+                                <p>We understand dental anxiety is common. Our staff is specially trained to help nervous patients feel comfortable. We offer options like sedation dentistry, entertainment during procedures, and we'll always explain each step so you know what to expect.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="appointment-form p-4 p-lg-5" id="appointment">
+                        <h3 class="fw-bold mb-4">Book an Appointment</h3>
+                        <form id="appointmentForm">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Full Name</label>
+                                <input type="text" class="form-control" id="name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Phone Number</label>
+                                <input type="tel" class="form-control" id="phone" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="service" class="form-label">Service Needed</label>
+                                <select class="form-select" id="service" required>
+                                    <option value="" selected disabled>Select a service</option>
+                                    <option>General Checkup</option>
+                                    <option>Teeth Cleaning</option>
+                                    <option>Cosmetic Dentistry</option>
+                                    <option>Orthodontics</option>
+                                    <option>Oral Surgery</option>
+                                    <option>Emergency Care</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="date" class="form-label">Preferred Date</label>
+                                <input type="date" class="form-control" id="date" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Additional Information</label>
+                                <textarea class="form-control" id="message" rows="3"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-appointment w-100 py-2 mt-2">Request Appointment</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-5 bg-light" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 mb-5 mb-lg-0">
+                    <h2 class="fw-bold mb-4">Contact Information</h2>
+                    <p class="lead">Get in touch with us</p>
+                    <p>We're here to answer your questions and schedule your next dental visit. Feel free to reach out by phone, email, or by visiting our office.</p>
+                    
+                    <div class="mt-4">
+                        <div class="d-flex align-items-start mb-4">
+                            <div class="me-3 text-primary">
+                                <i class="fas fa-map-marker-alt fa-lg"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-1">Address</h5>
+                                <p class="mb-0">123 Dental Street, Suite 100<br>New York, NY 10001</p>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex align-items-start mb-4">
+                            <div class="me-3 text-primary">
+                                <i class="fas fa-phone fa-lg"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-1">Phone</h5>
+                                <p class="mb-0">(555) 123-4567<br>Emergency: (555) 987-6543</p>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex align-items-start mb-4">
+                            <div class="me-3 text-primary">
+                                <i class="fas fa-envelope fa-lg"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-1">Email</h5>
+                                <p class="mb-0">info@happyteeth.com<br>appointments@happyteeth.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex align-items-start">
+                            <div class="me-3 text-primary">
+                                <i class="fas fa-clock fa-lg"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-1">Hours</h5>
+                                <p class="mb-0">
+                                    Monday - Friday: 8:00 AM - 7:00 PM<br>
+                                    Saturday: 9:00 AM - 3:00 PM<br>
+                                    Sunday: Emergency only
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h5 class="mb-3">Follow Us</h5>
+                        <div class="d-flex gap-3">
+                            <a href="#" class="text-primary"><i class="fab fa-facebook-f fa-lg"></i></a>
+                            <a href="#" class="text-primary"><i class="fab fa-twitter fa-lg"></i></a>
+                            <a href="#" class="text-primary"><i class="fab fa-instagram fa-lg"></i></a>
+                            <a href="#" class="text-primary"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-7">
+                    <div class="map-container ratio ratio-16x9 shadow-sm rounded">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.9663095343008!2d-74.00425872446437!3d40.74076987932881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259bf5c1654f3%3A0xc80f9cfce5383d5d!2sMadison%20Square%20Garden!5e0!3m2!1sen!2sus!4v1700427945234!5m2!1sen!2sus" 
+                                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <h3 class="fw-bold mb-0">Subscribe to Our Newsletter</h3>
+                    <p class="mb-0">Get dental health tips and special offers straight to your inbox.</p>
+                </div>
+                <div class="col-md-6">
+                    <form class="d-flex">
+                        <input type="email" class="form-control me-2" placeholder="Your email address" required>
+                        <button type="submit" class="btn btn-light px-4">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="fw-bold mb-4">Happy Teeth Dental</h5>
+                    <p>Providing exceptional dental care with a personal touch since 2008. Your smile is our priority.</p>
+                    <div class="mt-4">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="fw-bold mb-4">Quick Links</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li class="mb-2"><a href="#home">Home</a></li>
+                        <li class="mb-2"><a href="#about">About Us</a></li>
+                        <li class="mb-2"><a href="#services">Services</a></li>
+                        <li class="mb-2"><a href="#dentists">Our Dentists</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="fw-bold mb-4">Services</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li class="mb-2"><a href="#">General Dentistry</a></li>
+                        <li class="mb-2"><a href="#">Cosmetic Dentistry</a></li>
+                        <li class="mb-2"><a href="#">Orthodontics</a></li>
+                        <li class="mb-2"><a href="#">Oral Surgery</a></li>
+                        <li><a href="#">Emergency Care</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="fw-bold mb-4">Contact Info</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> 123 Dental St, NY 10001</li>
+                        <li class="mb-2"><i class="fas fa-phone me-2"></i> (555) 123-4567</li>
+                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> info@happyteeth.com</li>
+                        <li><i class="fas fa-clock me-2"></i> Mon-Fri: 8AM-7PM</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <hr class="my-4 bg-light">
+            
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <p class="mb-0">&copy; 2023 Happy Teeth Dental. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-white me-3">Privacy Policy</a>
+                    <a href="#" class="text-white">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+                navbar.classList.remove('navbar-dark');
+                navbar.classList.add('navbar-light');
+            } else {
+                navbar.classList.remove('scrolled');
+                navbar.classList.remove('navbar-light');
+                navbar.classList.add('navbar-dark');
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Appointment button scroll to form
+        document.querySelectorAll('.appointment-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelector('#appointment').scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // FAQ accordion icon toggle
+        document.querySelectorAll('.faq-header').forEach(header => {
+            header.addEventListener('click', function() {
+                const icon = this.querySelector('i');
+                if (this.classList.contains('collapsed')) {
+                    icon.classList.remove('fa-plus');
+                    icon.classList.add('fa-minus');
+                } else {
+                    icon.classList.remove('fa-minus');
+                    icon.classList.add('fa-plus');
+                }
+            });
+        });
+
+        // Form submission
+        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your appointment request! We will contact you shortly to confirm your booking.');
+            this.reset();
+        });
+
+        // Testimonial slider - simple version
+        let currentTestimonial = 0;
+        const testimonials = document.querySelectorAll('.testimonial-card');
+        
+        function showTestimonial(index) {
+            testimonials.forEach((card, i) => {
+                card.style.display = i === index ? 'block' : 'none';
+            });
+        }
+        
+        document.querySelector('.testimonial-next').addEventListener('click', function() {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            showTestimonial(currentTestimonial);
+        });
+        
+        document.querySelector('.testimonial-prev').addEventListener('click', function() {
+            currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+            showTestimonial(currentTestimonial);
+        });
+        
+        // Initialize - show all testimonials on larger screens, first one on mobile
+        function handleTestimonialDisplay() {
+            if (window.innerWidth >= 768) {
+                testimonials.forEach(card => card.style.display = 'block');
+            } else {
+                showTestimonial(currentTestimonial);
+            }
+        }
+        
+        window.addEventListener('resize', handleTestimonialDisplay);
+        handleTestimonialDisplay();
+    </script>
+</body>
+</html>
